@@ -14,7 +14,7 @@ def on_connect(self, mosq, obj, rc):
 def on_message(mosq, obj, msg):
 	print("MQTT Data Received...")
 	print("MQTT Topic: " + msg.topic)  
-	print("Data: " + msg.payload)
+	print("Data: " + str(msg.payload))
 
 
 def on_subscribe(mosq, obj, mid, granted_qos):
