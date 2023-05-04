@@ -7,7 +7,7 @@ MQTT_Port = 1883
 Keep_Alive_Interval = 3600
 MQTT_Topic = "prod/#"
 
-ef on_connect(self, mosq, obj, rc):
+def on_connect(self, mosq, obj, rc):
 	mqttc.subscribe(MQTT_Topic, 0)
 
 
