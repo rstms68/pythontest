@@ -21,3 +21,15 @@ def on_subscribe(mosq, obj, mid, granted_qos):
     pass
 client_id = "test"
 mqttc = mqtt.Client(client_id)
+
+
+# Assign event callbacks
+mqttc.on_message = on_message
+mqttc.on_connect = on_connect
+mqttc.on_subscribe = on_subscribe
+
+# Connect
+mqttc.connect(MQTT_Broker, int(MQTT_Port), int(Keep_Alive_Interval))
+
+# Continue the network loop
+mqttc.loop_forever()
